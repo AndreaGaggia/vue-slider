@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Slider</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="slider-wrapper">
+                <div class="prev" @click="immaginePrecedente">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="images">
+                    <img class="active" :src="immagini[indice]">
+                </div>
+                <div class="next" @click="immagineSuccessiva">
+                    <i class="fas fa-angle-right"></i>
+                </div>
+                <div class="nav">
+                    <i @click="cambiaIndice(i)" :class="i === indice ? 'active' : ''" class="fas fa-circle" v-for="(img, i) in immagini"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- CDN Vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
